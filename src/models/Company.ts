@@ -1,43 +1,48 @@
 import {Classification} from "../enums/Classification";
+import {Class} from "@babel/types";
 
 export class Company {
+    private _id: String;
+    private _name: String;
+    private _skipCreditCheck: boolean;
+    private _classification: Classification;
 
     constructor(id: String, name: String, skipCreditCheck: boolean, classification: Classification) {
-        this.id = id;
-        this.name = name;
-        this.skipCreditCheck = skipCreditCheck;
-        this.classification = classification;
+        this._id = id;
+        this._name = name;
+        this._skipCreditCheck = skipCreditCheck;
+        this._classification = classification;
     }
 
-    get id() {
-        return this.id;
+    get id(): String {
+        return this._id;
     }
 
-    get name() {
-        return this.name;
+    get name(): String {
+        return this._name;
     }
 
-    get skipCreditCheck() {
-        return this.skipCreditCheck;
+    get skipCreditCheck(): boolean {
+        return this._skipCreditCheck;
     }
 
-    get classification() {
-        return this.classification;
+    get classification(): Classification {
+        return this._classification;
     }
 
     set id(id: String) {
-        this.id = id;
+        this._id = id;
     }
 
     set name(name: String) {
-        this.name = name;
+        this._name = name;
     }
 
     set skipCreditCheck(skipCreditCheck: boolean) {
-        this.skipCreditCheck = skipCreditCheck;
+        this._skipCreditCheck = skipCreditCheck;
     }
 
     set classification(classification: Classification) {
-        this.classification = classification;
+        this._classification = classification;
     }
 }
